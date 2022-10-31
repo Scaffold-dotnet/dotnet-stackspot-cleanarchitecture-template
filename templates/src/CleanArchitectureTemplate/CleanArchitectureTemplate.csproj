@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <LangVersion>10.0</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <IsPackable>true</IsPackable>
+
+    <IncludeContentInPack>true</IncludeContentInPack>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <ContentTargetFolders>content</ContentTargetFolders>
+    <NoDefaultExcludes>true</NoDefaultExcludes>
+    <PackageOutputPath>.</PackageOutputPath>
+
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Version>1.0</Version>
+    <Title>Scaffold Clean Architecture</Title>
+    <Description>Template to use with stack spot</Description>
+    <PackageTags>scaffold;scaffold-dotnet;clean-architecture;template;dotnet-template;micro-services</PackageTags>
+    <NeutralLanguage>en</NeutralLanguage>
+    <PackageType>Template</PackageType>
+    <Version>1.0</Version>
+    <PackageId>CleanArchitectureTemplate</PackageId>
+    <Company>scaffold-dotnet</Company>
+    <Authors>Daniel Oliveira</Authors>
+    <Copyright>scaffold-dotnet © 2022-2023</Copyright>
+    <PackageCopyright>scaffold-dotnet © 2022-2023</PackageCopyright>
+    <PackageProjectUrl></PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl></RepositoryUrl>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.0.0-rc8" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.0.0-rc8" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.0.0-rc8" />
+    <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.2.0-beta1" />
+    <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol.Logs" Version="1.0.0-rc8" />
+  </ItemGroup>
+
+</Project>
