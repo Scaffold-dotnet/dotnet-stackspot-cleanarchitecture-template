@@ -1,9 +1,61 @@
-name: dotnet-stackspot-cleanarchitecture-template
-description: Describe your template explaining its purpose
+name: clean-architecture-template
+description: This is an scaffold rest api based in microservices
 types:
   - app-template
 inputs:
+
   - label: Project name
     type: text
     name: project_name
     default: project-name
+
+  - label: Select the dotnet version
+    type: text
+    name: project_dotnet_version
+    items:
+      - "net6.0"
+      - "net5.0"
+      
+  - label: Select the dotnet build version
+    type: text
+    name: project_dotnet_build_version
+    items:
+      - "6.0.402"
+      - "5.0.408"
+      
+  - label: Select csharp version
+    type: text
+    name: project_csharp_version
+    items:
+      - "10.0"
+      - "9.0"
+
+global-computed-inputs:
+  project_type: "Api"  
+  source_path: "src"
+  
+hooks:
+  
+  - type: run
+    trigger: after-render
+    windows:      
+      - dotnet restore {{global_computed_inputs.source_path}}
+      - dotnet build {{global_computed_inputs.source_path}} -c Release -p:Version=6.0.402 --no-restore      
+      - dotnet new install {{global_computed_inputs.source_path}}/. --force
+      - dotnet new CleanArchitectureTemplate -n {{inputs.project_name}} -o '{{target_path | replace('\\','\/')}}' --skipRestore true --force  
+     
+displayName: Rest Api - Template
+
+category: Backend, Api, Rest Api
+
+compatibility:
+  - net6.0
+  - net5.0
+
+technologies: 
+  - .NET
+  - C#
+  - Docker
+  - Observability
+  - OpenTelemetry
+  - CQRS
