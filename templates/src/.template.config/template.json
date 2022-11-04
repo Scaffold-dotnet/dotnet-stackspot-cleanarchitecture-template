@@ -38,7 +38,8 @@
                         "./.git/**",
                         "./**/bin/*",
                         "./**/obj/*",
-                        ".template_config/**"
+                        ".template_config/**",
+                        "**/*.nupkg"
                     ]
                 }
             ]
