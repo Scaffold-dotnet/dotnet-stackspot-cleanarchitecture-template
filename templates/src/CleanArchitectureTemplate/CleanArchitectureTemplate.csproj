@@ -35,6 +35,9 @@
     <RepositoryUrl></RepositoryUrl>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Include=".\**\" Exclude="**\bin\**\;**\obj\**\;.\nuget.csproj;.\.vstemplate;.\.png;.\nuget.nuspec;.\.git\**;.\.vs\**;.\.md" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />

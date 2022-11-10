@@ -47,8 +47,13 @@ obj/*
 
 bin
 bin/*
+
 .vs
 .vs/*
 
 .git
 .git/*
+
+.sarif
+.sarif/*
+*/.sarif

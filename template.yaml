@@ -37,21 +37,21 @@ global-computed-inputs:
   version: "CleanArchitectureTemplate"
 
 hooks:
-#building tamplate source code
+  #building template source code
   - type: run
     trigger: after-render
     windows:
       - dotnet restore {{global_computed_inputs.source_path_src}}
       - dotnet build {{global_computed_inputs.source_path_src}} -c Release --no-restore
-#Installing template into dotnet new gallery option
+  #Installing template into dotnet new gallery option
   - type: run
     trigger: after-render
-    windows:  
+    windows:
       - dotnet new install {{global_computed_inputs.source_path_src}}/. --force
       - dotnet new {{global_computed_inputs.version}} -n {{global_inputs.project_name}} -o '{{target_path | replace('\\','\/')}}' --skipRestore true --force
       - dotnet new tool-manifest
       - dotnet tool install --local dotnet-format
-#remove src folder that is copy into generated app
+  #remove src folder that is copy into generated app
   - type: run-script
     trigger: after-render
     script: scripts/remove-folder.py
